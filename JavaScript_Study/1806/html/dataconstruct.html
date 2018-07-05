@@ -1,0 +1,86 @@
+<script>
+
+var stack = []; //lifo     값을 넣을 때 push, 값을 뺄 때 pop
+stack.push(1); //[1]
+stack.push(2,3); //[1,2,3]
+
+var a = stack.pop(); //[1,2] a = 3
+stack.push([4,5]) // [1,2,[4,5]]
+
+var queue = [];  //first in first out 뒤로 넣고 앞으로 빼야 함 push로 넣고 shift로 빼고
+var len = queue.unshift(1); //[1];  //앞에 추가
+var len = queue.unshift(2); //[2,1]; 배열의 길이를 반환
+var b = queue.shift();  //b = 젤 앞에있는 값인 2가 들어가고 배열은 [1]이 남음
+
+//반환 값이없는 함수의 결과 값은 = undefined(return값이 없는 함수)
+function f(a){
+  return a;
+}
+f(1,2,3,4); // 오류 x 우리가 만든 함수에 한해서
+function f(a){
+return a + b + c;  //1,undefined,undefined
+}
+f(1,2,3); //접근방법이 없음
+
+function f(a){
+  return function(){return a*a};
+}
+
+var f2 = f(2);
+typeof f2 == "function"
+
+var r = f2(); // 언제 실행하던지 4가 반환 됨
+
+a[0] = function(){return 1;}
+a[0](); // 1 함수를 실행할 때 괄호를 붙여주고 전달하고 싶은 인자 값을 넣어주기만 하면 됨
+
+var a = (function(){return 1;})(); // 함수를 만들자 말자 바로 실행함 a = 1이 담김
+//
+function copyPropertyNamesToArrat(obj, arr){
+  //이 함수(obj)의 프로퍼티가 뭔지 배열(arr)에 담음
+        arr = arr || [];  //if(!arr)arr = [];
+        for(var p in obj) arr.push(p);
+        return arr;
+}
+
+var date = new Date();
+var arr = [];  //or -> var arr = copyPropertyNamesToArrat(date);
+copyPropertyNamesToArrat(date, arr);
+
+//함수를 만들 때
+function f(){
+        var a = arguments[0];
+        var b = arguments[1];
+        var c = arguments[2];
+
+        //arguments//내장 객체 함수를 실행할 때 매개변수로 들어오는 것들이 배열로 저장되어 있음
+}
+f(1,2,3);
+        //
+function addAll(){
+  var sum = 0;
+  for(var i=0; i<arguments.length; i++){
+    if(typeof arguments[i] == "number"){
+    sum += arguments[i];
+    }
+  }
+  return sum;
+}
+addAll(1);
+addAll("1",2);
+addAll(1,2,3);
+
+////////
+var r = (function(x){  //한 번 쓰고 버리기위해 = callee 함수사용
+  if (x <= 1) return 1;
+  return x * arguments.callee(x-1); //자기를 호출한 주인(자기 매개변수의 주인 = callee)
+})(3);
+// step 1 -> 3 * f(2);     (3이 들어갔을 때)
+// step 2 -> 3 * (2 * f(1));
+// step 3 -> 3 * (2 * 1);
+// result r = 6
+
+
+
+
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>이벤트 객체 프로퍼티</title>
+  </head>
+  <body>
+    <h3>이벤트 객체의 프로퍼티 출력</h3>
+    <hr>
+    <p id = "p">버튼을 클릭하면 이벤트 객체 출력</p>
+  <button onclick = "f(event)"> 클릭 하세요 </button>
+
+  <script>
+//jdbc 회원가입 list SQL Lite에다가 회원누적
+    function f(e){
+      var text = "type 발생 이벤트 종류 : " +e.type+"<br>"
+      + "target 이벤트 발생시킨 객체 : " + e.target+"<br>"
+      + "currentTarget 현재 이벤트 리스너를 실행하고 있는 DOM 객체 : "+e.currentTarget+"<br>"
+      + "defaultPrevented 행동이 취소되었는가? : "+e.defaultPrevented+"<br>"
+      + "Prevent로 디폴트 행동 취소"+e.preventDefault()+"<br>"
+      + "defaultPrevented 값 확인"+e.defaultPrevented;
+
+      var p = document.getElementById("p");
+      p.innerHTML = text;
+    }
+  </script>
+  </body>
+</html>

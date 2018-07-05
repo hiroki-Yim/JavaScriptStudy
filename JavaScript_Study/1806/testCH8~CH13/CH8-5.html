@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head id ="myHead">
+  <title>document 객체의 주요 프로퍼티</title>
+  <script>
+    var text = "문서 로딩 중일 때 readyState = " + document.readyState + "\n";
+  </script>
+</head>
+    <body style = "background-color:yellow; color:blue; direction:rtl"
+          onload = "printProperties()">
+          <h3>document의 주요 프로퍼티</h3>
+          <hr>
+          <a href = "http://www.naver.com">네이버 홈페이지</a>
+          <div>this is div area</div>
+          <input id = "input" type = "text" value = "여기 포커스가 있음">
+
+      <script>
+      //문서가 완전히 로드(출력)되었을 때, 현재 document의 properties출력
+      function printProperties(){
+        document.getElementById("input").focus();
+
+        text += "document.location="+document.location+"\n";
+        text += "URL="+document.URL+"\n";
+        text += "title="+document.title+"\n";
+        text += "head id"+document.head.id+"\n";
+        text += "body color"+document.body.style.color+"\n";
+        text += "lastModified"+document.lastModified+"\n";
+        text += "domain"+document.domain+"\n";
+        text += "default view"+document.defaultView+"\n";
+        text += "로드 후 readyState"+document.readyState+"\n";
+        text += "referrer"+document.referrer+"\n";
+        text += "activeElement"+document.activeElement+"\n";
+        text += "document tagName"+document.documentElement.tagName+"\n";
+        alert(text);
+      }
+
+      </script>
+    </body>
+    </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Practice Login Site</title>
+    <link rel="stylesheet" href="loginToFrameWork.css" type="text/css">
+    <script src="loginToFrameWork.js"></script>
+  </head>
+
+  <body>
+    <form class="form login" action = "loginok.php" method = "post">
+      <div class = "row input">
+      <label for="user_id">ID</label>
+      <input type="text" id = "user_id" name = "user_id" value = ""
+      placeholder="input your id"/>
+      </div>
+
+      <div class = "row input">
+      <label for="user_pwd">PS</label>
+      <input type="password" id ="user_pwd" name ="user_pwd" value =""
+      placeholder ="input your password" required/>
+      </div>
+
+      <div class = "row submit"><input type="submit" value="Login"></div>
+
+    </form>
+  </body>
+</html>

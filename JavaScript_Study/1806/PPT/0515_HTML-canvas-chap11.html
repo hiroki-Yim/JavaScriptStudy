@@ -1,0 +1,48 @@
+<div id="panel">
+  <canvas id="canvas" width="100%" height="500"></canvas>
+</div>
+<script>
+/*
+canvas는 하나의 공간(틀) 이다.
+canvas를 찾은 다음 context로 얻음(?)
+2D = 2d, 3D = webgl
+그래픽, 웹 페이지(그래프, 애니메이션, 지도 등)활용
+그래픽 : 자바 애플　릿이나 플래시등의 플러그인 이용
+
+html5만 지원하기에 지원하지 않는 브라우저에서는 무시당함.
+form : <canvas id ="grade" width = "300" height = "300"></canvas>
+-> 이미지 처럼 사용가능(인라인 적용)
+
+context(메서드)
+        property
+.beginPath(); 붓을 잡는 행위, 새로운 공간 만들기, 빈 경로 만들기(빈 메모리 공간 확보)
+.strokeStyle = "blue"; 파란색 붓을 잡음
+.moveTo(120, 20) = (120, 20)점에서 붓이 이동 ()
+.lineTo(20, 50) = moveTo에서 lineTo까지의 직선이 경로에 추가
+.rect(a,b,c,d); (30,30)에서 50x50크기의 사각형 그림(삽입)
+.stroke(); 경로에 있는 모든 도형의 외각선 그림 (실제 이때 화면상에 나타남)
+.fillStyle = "violet"; 속성 안의 색으로 채워줌
+.fill(); 경로에 있는 모든 도형의 내부만 채워 그리기 (실제 이때 화면상에 나타남)
+.closePath(); 강제적으로 작업 공간을 닫음 (시작점과 마지막점을 자동으로 그려줌)마무리
+Path 라는 것은 개별의 작업공간이고 하나의 단위이다.
+*/
+
+/*
+원 그리는 메서드
+arc
+arc(x, y, radius, startAngle, engAngle, anticlockwise)
+x, y, radius : (x, y)원의 중심 radius : 반지름
+startAngle : 3시 시작 시계방향 각도 계산 (원의 시작 각도)
+endAngle :             //              (원의 끝 각도)
+anticlockwise : true = 반시계방향, false = 시계방향, defalt = false
+
+*/
+var div = document.getElementById('panel');
+if(div){
+  div.innerHTML += '<canvas id = "c" width = 100% height = "500"></canvas>'
+  var canvas = document.createElement("canvas");
+  canvas.id = "c";
+  canvas.width = "100%";
+  div.appendChild(canvas);
+}
+</script>

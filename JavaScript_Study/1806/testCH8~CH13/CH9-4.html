@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- 익명 함수로 이벤트 리스너 작성-->
+<html>
+
+<head>
+  <title>익명 함수로 이벤트 리스너 작성</title>
+  <script>
+
+
+    function init() {
+      var p;
+      p = document.getElementById("p");
+      p.onmouseover = function() {
+        this.style.backgroundColor = "blue";
+      };
+      p.addEventListener("mouseout", function() {
+        this.style.backgroundColor = "white";
+      });
+
+
+    }
+  </script>
+</head>
+
+<body onload="init()">
+  <h3>익명 함수로 이벤트 리스너 작성</h3>
+  <hr>
+  <p id="p">마우스 올리면 orchid 색으로 변경</p>
+  <p id="y">이거 되나???</p>
+<script>
+  var p = document.getElementById("y");
+  p.onmouseover = function(){
+    this.style.backgroundColor="yellow";
+  };
+  p.onmouseout = function(){
+    this.style.backgroundColor="white"
+  };
+</script>
+</body>
+
+</html>

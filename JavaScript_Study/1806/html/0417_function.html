@@ -1,0 +1,58 @@
+<script>
+
+  function(x){
+    if(x < = 1) return 1;
+    return x * arguments.callee(x-1);  //실행될 때 전달된 인자들의 값들을 나타내고
+                                       //전달될 때 값의 주인을 callee라고 한다 (arguments의 소유주를 나타냄?)
+  }
+
+  function sum(a){
+    //배열에 전달되는 값을을 모두 더하는 함수를 만든다고 가정
+    if( a && (a instanceof Array) || (typeof a == 'object' && 'length' in a))  //array의 정의
+    //array를 상속받거나 a
+    {
+      //실제 동작 코드
+    }
+  }
+
+  //함수는 데이터의 역할도 함
+  var a = function(){
+          return 1;
+}; // a에는  function(){retrun 1;}이 담김 -> a는 함수를 그 자체를 가르킴
+  // 그래서 a(); 로 실행가능하며 a();의 값이 1이 되는것
+  var b = a;
+  // b();와 같이 실행할 수 있게 가능해짐
+
+  a = 3; // 후에 이렇게 바꾼다면?
+  alert(a);  //a는 3이라는 값이 되고
+  alert(b);  //b는 function이 됨
+
+var a = function(){
+  var x = 1;
+  return arguments.callee();    //함수 이름이 바뀔것을 염려하여 callee라는 것을 사용해준다.
+  //return a(); 오류가 있어 위와 같은 식으로 사용해줌
+};
+
+  var b = a;
+  alert(b());
+
+//실행 될 당시에 함수인지 아닌지 알고싶을 때
+var b = a;
+a = 2;
+if(typeof a == 'function'){  //a가 함수면 이 문장 실행
+  alert(a());
+}else{                       //아니면 이문장 실행
+  alert(a);
+}
+}
+
+
+
+
+
+
+
+
+
+
+</script>

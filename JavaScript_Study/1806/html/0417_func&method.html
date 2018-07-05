@@ -1,0 +1,46 @@
+<script>
+
+// var x = 'global';
+// function f(){
+//   var x = 'local'
+//   alert(x); // return local
+//   alert(this.x) // return global 여기서는 window를 나타냄
+// }
+// f();
+//
+// var Obj = {
+//   x = 'object',  //object 는 객체
+//   f : function(){
+//     alert(this.x);
+//   }
+// };
+//
+// Obj.f();
+////////////////////////////////////////////////////////////////////////////////
+
+function add(a, b){
+  // var len = arguments.length;  // 1 호출했을 때 개수
+  // alert(len);
+  // alert(arguments.callee.length);  // 3 선언을 했을 때의 개수
+  checkArguments(arguments);
+  return a + b;
+  // var len = arguments.length;
+  // var flen = arguments.callee.length;
+  // if(len == flen){
+  //   return a+b;
+  // }else{
+  //   alert('매개변수가 2개 입니다.')
+  // }
+}
+
+function checkArguments(args){  //함수 호출을 체크
+  var argLen = args.length;
+  var funLen = args.callee.length;
+  if(argLen ! funLen){
+      throw new Error('함수 호출 오류');
+  }
+}
+
+add(1,2)
+
+</script>

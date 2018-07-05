@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>이벤트 리스너 작성방법 4가지</title>
+<script>
+  var p = document.getElementById("three");
+  p.addEventListener("mouseover", this.style.backgroundColor="red";);
+</script>
+</head>
+
+<body>
+
+  <p id="p" onmouseover="this.style.backgroundColor='orchid'">
+    1.HTML 태그 안에 정의
+  </p>
+
+  <p id = "two">
+    2.이벤트 리스너 프로퍼티 over()
+  </p>
+
+  <p id = "three">
+    3.addEventListener 이용
+  </p>
+
+  <script>
+  var p = document.getElementById("two");
+    function over() {
+      p.style.backgroundColor = "blue";
+    }
+    p.onmouseover = over;
+  </script>
+</body>
+
+</html>

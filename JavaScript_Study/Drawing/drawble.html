@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="./drawble.css">
+        <script src="drawble.js"></script>
+        <script>
+            var opt = {
+                width: 600,
+                height: 400,
+                borderColor: "red",
+                borderWidth: "2px"
+            }
+            var spaint;
+            function init(){
+                spaint = new Drawble('draw_container', opt);  //new 키워드로 만들어질 때 prototype으로 만든건 가지고 있음
+                spaint.show();
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <div id="draw_container">
+
+        </div>
+
+    </body>
+</html>

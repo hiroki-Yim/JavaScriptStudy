@@ -1,0 +1,49 @@
+<script>
+
+// unique.a = 0;
+// function nuique(){
+//     return ++(unique.a);
+// }
+// unique(); //자체적으로 function도 자체 프로퍼티를 가질 수 있다. (객체처럼)
+
+var x = 'global'
+
+var obj1 = {
+  x : 'object1'
+}
+var obj2 = {
+      x : 'object2',
+      f : function(){
+        alert(this.x);
+      }
+}
+
+//function apply - ((this),[매개변수를 배열로 만듦]) 배열로 받았으면 이 방식으로 접근해야함
+//          call - ((this), , ,) this값을 this자리에 넣은 매개변수로 바꿈
+
+obj2.f();  //object2
+obj2.f.call(obj1,1 , 2); // obj2의 함수를 obj1의 함수처럼 사용가능 call에 전달되는 첫 번째  //object1
+//실행될 당시에 주인을 잠시 바꾼것(this값을 바꿔주기 위해 사용)
+//obj1.f = obj2.f;
+//obj1.f(1,2);
+//delete obj1.f; 위 세줄과 같은 동작을 하는 코드
+obj2.f.call(this,1,2)//return global
+obj2.f.apply(obj1, [1, 2]);  //apply는 뒤에 값이 배열로 들어감  //object1
+    //부를 때 마다 함수앞에 붙는 this값이 변하니 (obj1)로 고정시켜 놓고 부를 수 있도록 만듬
+    // == obj1.
+
+
+function a(x){  //x를 매개변수로 받는 함수
+  var z = x;  //지역변수이지 property가 아님 (사라지는 변수)this.z = x;라고 하면 property가 됨
+   return function(){ return x;} // 반환하는 결과 함수가 x를 알고있음 참조변수를 잊어먹지만 x가 기억하고 있기 때문에 접근가능 = 클로저
+}
+ㄴ
+var func = a(); // func = function이 됨
+
+var arr = [f(1), f(2), f(3)];
+arr[0](); // f(1)한 결과값을 여기에 저장 실행될 때 값을 저장하는게 아니고 함수가 실행한 결과를 반환할 때
+arr[1](); // f(2)
+arr[2](); // f(3)
+// 이런것을 클로저 라고한다 (함수안에 서브함수를 콜 할때 그 함수는 그 안에서 벌써 결정이 되어진다.)
+// 이것을 이용하여 private (외부에 노출되지 않는 것)을 만들 수 있다.
+</script>

@@ -1,0 +1,30 @@
+<script>
+
+var obj = new Object();
+var arr = new Array();  //객체를 만들 때 -> class의 인스턴스(복사본)를 만든다.
+                        //new 연산자와 ()연산자로 만든다. new 가 붙음으로서
+
+var obj2 = Object(); //생성자 함수 -> 함수를 객체로 만들 수 있음 (new 연산자가 없으면)
+
+function Rectangle(w,h){ //매개변수가 있는 생성자 = 반환값이 없음
+        this.width = w;
+        this.heigth = h;  //width와 heigth property가 생성됨
+        // var obj = [1,];
+        // return obj;  //arr 반환 -> 생성자는 반환값을 없는것을 기본으로 한다.
+}
+
+var rect = new Rectangle(4,5); // 4x5의 객체를 만들 수 있음
+//이러면
+rect.width;                           //4
+rect.heigth;//가 사용 가능해짐         //5
+rect.area();                         //4*5 = 20
+
+var rect1 = new Rectangle(10,15);
+rect1.width;
+rect1.heigth;
+//와 같은 과정으로 class를 생성함
+
+Rectangle.area = function(){
+    this.width * this.heigth; //Rectangle의 멤버 메서드 생성
+}
+</script>

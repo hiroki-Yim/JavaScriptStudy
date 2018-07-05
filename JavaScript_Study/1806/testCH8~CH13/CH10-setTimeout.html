@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>setTimeout()으로 웹 페이지 자동 연결</title>
+  </head>
+  <body>
+<h3>이미지에 마우스 올릴시 이동</h3>
+<hr>
+<p id = "img" scr="media/naver.gif"
+    onmouseover = "startTimer(2000)"
+    onmouseout = "cancleTimer()">img</p>
+    <script>
+      var timerID = null;
+      function startTimer(time){
+      timerID = setTimeout("load('http://www.naver.com')", time);
+
+      document.getElementById("img").title = "타이머 작동 시작...";
+      }
+      function cancleTimer(){
+        if(timerID != null)
+        clearTimeout(timerID);
+        alert('timer cancle');
+      }
+      function load(url){
+        window.location = url;
+      }
+    </script>
+  </body>
+</html>

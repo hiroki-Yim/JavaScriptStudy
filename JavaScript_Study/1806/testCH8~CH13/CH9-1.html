@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML 태그에 리스너 작성</title>
+    <script>
+
+    function init(){
+      var p = document.getElementById("p");
+      // p.onmouseover = over;
+      // p.onmouseout = out;
+      p.addEventListener("mouseover", over);
+      p.addEventListener("mouseout", out);
+    }
+
+    </script>
+
+  </head>
+
+  <body onload="init()">
+<p>HTML 태그에 리스너 작성</p>
+<hr>
+<p onmouseover = "this.style.backgroundColor = 'orchid '"
+   onmouseout = "this.style.backgroundColor = 'white'">
+     마우스 올리면 색 변경
+   </p>
+   <p id = "p">
+      DOM객체 이벤트 리스너 프로퍼티에 작성
+   </p>
+
+  <p id = "af"> 축하한다 </p>
+   <script>
+   var af = document.getElementById("af");
+   af.onmouseover = function(){this.style.backgroundColor = "red";};
+   af.addEventListener("mouseout", function(){this.style.backgroundColor = "white";});
+     // var p = document.getElementById("p");
+     // p.onmouseover = over;
+     // p.onmouseout = out;
+     function over(){
+       this.style.backgroundColor = "yellow";
+     }
+     function out(){
+       this.style.backgroundColor = "white";
+     }
+   </script>
+  </body>
+</html>

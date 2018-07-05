@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--  -->
+<html lang="kr" dir="ltr">
+<link rel="stylesheet" type="text/css" href="sign_in.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
+
+<head>
+  <meta charset="utf-8">
+  <title>회원가입 페이지</title>
+</head>
+
+<body>
+  <!-- multistep form -->
+  <form id="msform" method="post" action="#">
+    <!-- ex) action = "http://localhost:8080/form.jsp" -->
+    <!-- action : 폼을 전송할 서버 쪽 스크립트 파일을 지정합니다.
+        name : 폼을 식별하기 위한 이름을 지정합니다.
+        accept-charset : 폼 전송에 사용할 문자 인코딩을 지정합니다.
+        target : action에서 지정한 스크립트 파일을 현재 창이 아닌 다른 위치에 열도록 지정합니다.
+        method : 폼을 서버에 전송할 http 메소드를 정합니다. (GET 또는 POST) -->
+
+    <!-- fieldsets -->
+    <fieldset>
+      <!-- fieldset 태그는 form 양식에 관계된 요소들끼리 묶어주고, 관계 요소 주위에 박스를 그림 -->
+      <h2 class="fs-title">Create your account</h2>학번
+      <!-- pattern pattern 은 정규식을 넣어서 데이터를 검증할 수 있는 속성
+       pattern 속성에 정규식을 넣어서 input 에 입력한 값의 유효성을 체크할 수 있는 것 -->
+
+      <input type="tel" maxlength="7" pattern="[0-9]{7}" name="id" title="학번 형식으로 입력해 주세요!" placeholder="본인의 학번 7자리를 입력 해 주세요." required> 비밀번호
+      <input type="password" maxlength="15" name="password" pattern=".{6,}" title="6자 이상 입력 해 주세요!" placeholder="비밀번호 6자 이상" required>
+      <input type="password" maxlength="15" name="cpassword" placeholder="비밀번호 재확인" required> 이름
+
+      <!-- required 는 input 박스에 값을 반드시 입력해야 넘어갈 수 있도록 만드는 속성
+       만약 입력하지 않으면 더 이상 진행할 수가 없음창이 뜸-->
+
+      <!--
+       1. type : 입력 태그의 유형
+       2. vlaue : 입력 태그의 초기값을 말하며 사용자가 변경 가능.
+       3. name : 서버로 전달되는 이름 (사용자 임의 지정)
+       -->
+
+      <input type="text" maxlength="10" name="Name" placeholder="ex)홍길동" required> 이메일
+      <input type="text" name="Email" placeholder="exemple@google.com" required> 전화번호
+      <input type="text" name="Phone" placeholder="010-1234-5678" required>
+
+      <p id="horizon_boxing">성별
+        <hr />
+        <input class="hidden_btns" type="radio" id="male_btn" name="sex" value="male" required />
+        <label for="male_btn">
+        <div class="sex_btns">남성</div>
+      </label>
+        <input class="hidden_btns" type="radio" id="female_btn" name="sex" value="female">
+        <label for="female_btn">
+        <div class="sex_btns">여성</div>
+      </label>
+      </p>
+
+      <!--<input type="text" name="KaID" value="카카오톡 ID">-->
+      <input type="submit" class="submit action-button" onclick="" value="Submit" />
+      <!-- class에 space(공백)으로 구분 해 놓으면 class명을 2가지 사용 할 수 있다.-->
+    </fieldset>
+  </form>
+</body>
+
+</html>

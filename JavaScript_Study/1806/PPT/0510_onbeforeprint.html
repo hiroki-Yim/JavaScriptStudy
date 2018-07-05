@@ -1,0 +1,14 @@
+<img src="C:\Users\daegumunhwa\Pictures\Camera Roll\MRV_20180116_22_55_50.jpg" onclick="window.print();" onbeforeprint="f()" onafterprint="c()" alt="">
+asdasd <br>
+asfafasf <br>
+<script>
+//window 이벤트
+window.onbeforeprint = function f(){
+    var img = document.getElementsByTagName("img")[0];
+        img.style.display = "none";    //출력시 이미지 안보이게 하기위해
+  }
+window.onafterprint = function c(){
+    var img = document.getElementsByTagName("img")[0];
+        img.style.display = "block";
+  }
+</script>

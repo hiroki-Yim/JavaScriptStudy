@@ -1,0 +1,16 @@
+<!-- event driven programing은 멀티스레팅 지원을 위해 탄생
+
+이벤트 리스너 찾는법 documents. , document.
+
+함수 명 = 함수 그 자체
+() = 함수가 실행 된 결과를 리턴함
+ -->
+
+<script>
+  var body = document.getElementsByTagName('body')[0];
+  body.onload = bodyOnLoad;
+
+  function bodyOnLoad(){
+    alert('body loaded');    //load될때마다 반환
+  }
+</script>

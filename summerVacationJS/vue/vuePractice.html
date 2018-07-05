@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>practice vue.js</title>
+</head>
+
+<body>
+
+
+
+
+
+<div id = "app-7">
+    <my-tag></my-tag>
+</div>
+  <div id="app-6">
+    <p>{{message}}</p>
+    <input v-model="message">
+  </div>
+  <hr>
+  <div id="app-5">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">MESSAGE</button>
+  </div>
+  <hr>
+  <div id="app-4">
+    <ol>
+      <li v-for="todo in todos">{{todo.text}}</li>
+      <li v-for="objectz in objects">{{objectz.obj}}</li>
+    </ol>
+  </div>
+  <hr>
+  <div id="app-3">
+    <p v-if="seen">you can see me</p>
+  </div>
+  <hr>
+  <div id="app-2">{{message}}</div>
+  <hr>
+  <div class="app" v-bind:title="message"></div>
+  <!-- VUE.JS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="vuePractice.js">
+    // always under body tag
+  </script>
+</body>
+
+</html>

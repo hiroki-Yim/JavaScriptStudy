@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head><title></title></head>
+  <body>
+    <!--
+    기본 자료형 (Primitive) 인 여섯가지 데이터 타입
+    Boolean
+    Null
+    Undefined
+    Number
+    String
+    Symbol (ECMAScript 6 에 추가됨)
+    별도로 Object 도 있음
+    -->
+    <script>
+    //var undefined =
+    var aaa = "asd";
+    // 변수이름을 정하는 규칙
+    // 예약어 사용x, 숫자로 시작하면 안된다,
+    var a = 0;    var b = 1;    var c = 2;
+    var c = a&&b; //저장될 때는 값, 판단은 true,false 로 판단됨
+    var d = a||b;
+
+    var e = a || b && c || d;
+    var f = (a || (b && c)) || d;
+    alert(e);
+    //비교 연산 무엇이 e,f에들어갈까.
+    // ||는 true가 나온순간 &&는 둘다 ture일 때 뒤에값이 저장됨.
+
+    // 0이 아닌 숫자 = true, "" = false 문자열은 비어있을때 false,
+    // {} = 객체 = true , [] = 빈배열 = false
+
+    //return값이 없으면 undefined, undefined는 false 
+
+    </script></body></html>

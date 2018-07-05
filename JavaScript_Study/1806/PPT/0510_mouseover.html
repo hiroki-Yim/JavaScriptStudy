@@ -1,0 +1,22 @@
+<img src="https://" onmouseover="f()" onmouseout="c()" alt="www.naver.com">
+
+<script>
+
+var timerID;
+
+function f(){
+  //timerID = setTimeout(f2, 1000 * 5);  //일정시간이 지나면 일어남
+  timerID = setInterval(f2, 1000 / 2);  //Interval은 지정한 시간마다 이벤트를 발생시킴
+}
+
+  function f2(){
+    //location = "http://www.naver.com/";
+    //alert('apple')
+    window.open("http://m.naver.com" ","_black);
+  }
+
+  function c(){
+    //clearTimeout(timerID);\   //setTimeout으로 예약된 함수가 실행되는것을 취소하는 메서드
+    clearInterval();
+  }
+</script>

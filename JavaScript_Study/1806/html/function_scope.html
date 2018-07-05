@@ -1,0 +1,19 @@
+<script>
+//변수의 스코프
+//arguments.callee; 함수 자기자신의 위치를 나타냄 ()는 실행한다는 뜻
+
+function f(){
+  alert(arguments.callee);  // arguments를 호출한 함수 출력
+  alert(arguments.callee());  //callee는 arguments(객체)의 property
+}
+f();
+//배열은 length 라는 property를 자체적으로 가지고 있는 그룹
+var x;
+var a = x;  // undefined
+function b(){
+  return x;
+}      //함수는 정의 될 때의 문맥에 따라 error가 될 수도 있고 undefined가 될 수도 있다.
+
+b(); // error
+
+</script>

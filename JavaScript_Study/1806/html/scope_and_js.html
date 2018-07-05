@@ -1,0 +1,55 @@
+<script>
+  //case 1
+var a = "global";
+
+function printa(){
+  var a = "local";
+  alert(a);
+}
+//printa();  //local 출력
+
+  //case 2
+
+// alert(b);  //나중에 정의된 함수 = undefined 출력
+          //undefined = 변수가 정의되었지만 아무 값도 할당받지 않은 상태
+var b = "local"
+
+  //case 3
+
+var x;  //전역변수
+function globalx(){
+  var x;  //지역변수
+  x=1;    //지역변수 x에 1 저장
+  this.x = 100;  //전역변수 x에 100 저장
+  alert(x);
+}
+
+// globalx();  // x = 1
+// alert(x);   // x = 100
+
+  //case 4
+  //test
+  var num1 = "11" < "3" ;  //true 사전식으로 비교
+  var num2 = "aa" < "b" ;  //ture 사전식으로 비교하기 때문에
+  var num3 = "11" <  3  ;  //false (숫자 기준으로 형변환을 하기 때문)
+  var num4 = "11" -  3  ;  //return 8 숫자 기준으로 형변환 됨
+  var num5 = "11" +  3  ;  //return 113 문자열로 먼저 형변환을 하고 계산하기 때문(단 형이 다를 때)
+  var num6 = 1 + 1 + "1";  //return 21 먼저 int 둘 계산 1+1 = 2 + "1" = "2"+"1"= "21" = 21
+  var num7 = "1" + 1 + 1;  //return 111 "1"+1 = "11", "11"+1 = "111" -> 111
+
+  alert(num6);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

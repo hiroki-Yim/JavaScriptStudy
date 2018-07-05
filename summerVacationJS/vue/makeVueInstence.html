@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+<div id = 'app3'>
+  <p>현재시간 : "{{now}}"</p>
+  <p>변경된 시간 : "{{now2}}"</p>
+  <button v-on:click='getDate'>현재시간</button>
+</div>
+<hr>
+<div id = 'app2'>
+  <p>원본메세지 : "{{message}}"</p>
+  <p>뒤집힌메세지 : "{{reversedMessage}}"</p>
+</div>
+<hr>
+  <div id = 'app'>
+    <p>before : {{rawHtml}}</p>
+    <p>after : <span v-html="rawHtml"></span></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="makeVueInstence.js">
+    // always under body tag
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <script src = "ajax03.js"></script>
+  <script>
+    function test() {
+      var option = {
+        url : "http://localhost/ajax/ajax_practice/data01.json",
+        target : "div"
+      };
+
+      $.getAjax(option);//방법2
+
+
+//방법3      // $.getAjax({
+      //   target : "div"
+      //   url : "http://localhost/ajax/data01.json" //순서 상관X
+      //   method : "POST"
+      //   responseType : "json"
+      // });
+
+//방법1      //$.getAjax("http://localhost/ajax/data01.json", "div");
+      //var str = "div";                  // typeof str = "string"
+      //var str2 = new String ("div");   // typeof str2 = object
+    }
+  </script>
+  <body><!-- Framework를 만들 때 사용할 html -->
+<button onclick="test();">click it!</button>
+<div id = "divId" class="div1">1</div>
+<div id = "divId" class="div2">2</div>
+  </body>
+</html>

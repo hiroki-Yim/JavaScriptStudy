@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>winformJS</title>
+  <link rel="stylesheet" href="winform.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="winform.js"></script>
+  <script>
+    $(function() {
+      var winform = new WinForm('#winform'); //html 태그의 id가 winform인 element를 사용해서 만들겠다.
+      //  winform.backgroundColor("#C7C7C7");    //winform.setBackgroundColor("#C7C7C7");
+
+      var fileMenuItem = new MenuItem({
+        text: 'file',
+        onclick: function() {
+          var editMenuItem = new MenuItem({
+            text: 'edit'
+          });
+          winform.mainMenuBar.addMainMenu(editMenuItem);
+        }
+      });
+      winform.mainMenuBar.addMainMenu(fileMenuItem);
+    });
+  </script>
+</head>
+
+<body>
+  <div id='winform'>
+    <!-- element로서의 winform -->
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<script>
+// var arr = [1, 3, 5, 7, 9];
+// var a = 0;
+// var temp = arr[a++];  // a == 0 ,실행 된 후에 a = 1증가
+// var temp2 = arr[++a];  // a == 2 실행 전 a를 1 증가 시키고 실행
+// var temp3 = arr[--a];  // a == 1 실행 전 a를 1 감소 시키고 실행
+// var temp4 = arr[a--];  // a == 0 실행 후 a를 1 감소 시키고 실행
+//
+// alert(temp);  //1
+// alert(temp2); //5
+// alert(temp3); //3
+// alert(temp4); //3
+//
+// temp = temp2;
+// alert(temp);  //return 5 , temp2를 temp에 대입
+// temp2 += temp3;
+// alert(temp2); //return 8 , temp3을 temp2에 더함
+
+var a = prompt('a');
+var b = prompt('b');
+var c = prompt('c');
+
+a=parseInt(a);
+b=parseInt(b);
+c=parseInt(c);
+
+function adder(a,b,c){
+  var sum;
+ // var x = arguments[0];
+ // var y = arguments[1];
+ // var z = arguments[2];
+  sum = a+b+c;
+    return a+b+c;
+};
+
+var result = adder(a,b,c);
+alert(result);
+
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="kr" dir="ltr">
+<link rel="stylesheet" type="text/css" href="sign_in.css" />
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Login Page</title>
+</head>
+
+<body>
+  <!-- multistep form -->
+  <form id="msform">
+    <!-- progressbar -->
+    <ul id="progressbar">
+      <li class="active">Account Setup</li>
+      <li>Social Profiles</li>
+      <li>Personal Details</li>
+    </ul>
+    <!-- fieldsets -->
+    <fieldset>
+      <!-- fieldset 태그는 form 양식에 관계된 요소들끼리 묶어주고, 관계 요소 주위에 박스를 그림 -->
+      <h2 class="fs-title">Create your account</h2>
+      <h3 class="fs-subtitle">1단계</h3>
+      <!-- placeholder 태그는 박스안에 나타낼 내용을 적는 곳 이다.(예전에는 html과 css, js로 만들어야 했던 것을 쉽게 만들어 준것)-->
+      학번<input type="text" name="id" placeholder="본인의 학번 7자리를 입력 해 주세요." /> 비밀번호
+      <input type="password" name="password" placeholder="비밀번호" />
+      <input type="password" name="cpassword" placeholder="비밀번호 재확인" />
+      <input type="button" name="next" class="next action-button" value="다음으로" />
+    </fieldset>
+    <fieldset>
+      <h2 class="fs-title">Social Profiles</h2>
+      <h3 class="fs-subtitle">Your presence on the social network</h3> 이름
+      <input type="text" name="Name" placeholder="ex)홍길동" /> 이메일
+      <input type="text" name="Email" placeholder="exemple@google.com" /> 전화번호
+      <input type="text" name="Phone" placeholder="010-1234-5678" />
+      <input type="button" name="previous" class="previous action-button" value="이전으로" />
+      <input type="button" name="next" class="next action-button" value="다음으로" />
+    </fieldset>
+    <fieldset>
+      <h2 class="fs-title">Personal Details</h2>
+      <h3 class="fs-subtitle">We will never sell it</h3> 학과
+      <input type="text" name="Section" placeholder="ex)컴퓨터정보계열 or 간호학과" /> 학년
+      <input type="text" name="Grade" placeholder="학년을 입력 해 주세요" />
+      <p>성별
+        <hr> 남
+        <input type="radio" name="sex" value="male"> 여<input type="radio" name="sex" value="female">
+      </p>
+
+      <!--<input type="text" name="KaID" value="카카오톡 ID">-->
+      연락 가능한 SNS<textarea name="address" placeholder="거래를 위한 SNS 아이디 ex)카카오톡 아이디 or 라인 아이디"></textarea>
+      <input type="button" name="previous" class="previous action-button" value="Previous" />
+      <input type="submit" name="submit" class="submit action-button" value="Submit" />
+    </fieldset>
+  </form>
+
+  <script type="text/javascript" src="sign_in.js">
+  </script>
+
+</body>
+
+</html>

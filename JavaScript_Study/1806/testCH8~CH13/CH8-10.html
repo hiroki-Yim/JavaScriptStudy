@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>문서의 동적 구성</title>
+  <script>
+    function createDIV(){
+      var obj = document.getElementById("parent");
+      var newDIV = document.createElement("div");
+      newDIV.innerHTML = "새로 생성된 DVI";
+      newDIV.setAttribute("id", "myDiv");
+      newDIV.style.backgroundColor = "yellow";
+      newDIV.onclick = function(){
+        var p = this.parentElement;
+        p.removeChild(this);
+      };
+      obj.appendChild(newDIV);
+    }
+    //document 부분에 있는 parent가 obj를 지칭하게 해줌
+  </script>
+  </head>
+
+  <body id = "parent">
+    <h3>객체를 동적으로 생성 삽입 삭제</h3>
+    <hr>
+    <p>DOM 트리에 동적으로 객체 삽입</p>
+    <a href="javascript:createDIV()">DIV생성</a>
+  </body>
+  </html>

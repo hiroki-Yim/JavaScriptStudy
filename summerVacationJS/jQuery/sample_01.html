@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>/jQuery/sample_01.html</title>
+
+  <!-- 방법 1. local에 저장해서 사용 <script src ="jQuery.min.js"></script> -->
+  <!-- 방법 2. cdn 서비스 이용 -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <script>
+    //alert($); 로 제대로 불러와 졌는가 확인
+    //  var h1 = document.getElementsByTagName("h1");
+    //이런것을 jQuery는  alert하면 object HTMLCollection이 나옴  domElement dom객체  (ex스타크)
+    //    var $h1 = $("h1"); //과 같이 찾을 수 있음 object object 라고 나옴
+    // jQuery Element 라는 jQuery에서 제공하는 객체 dom객체에서 확장해서 더 많은 작업을 할 수 있게 해놓음 (ex아이언맨)
+    // 찾았는지 못찿았는지는 length로 판단 외냐면 집합이니까!
+    // $로 찾으면 항상 첫번째걸로 나옴 그래서 2개 있어도 젤 처음 한개만 나오는 것\
+    //  $(); or jQuery(); 로 사용
+    //factory함수 다른 함수를 만들어 냄  jQuery객체를 반환함!!
+  </script>
+
+</head>
+
+<body>
+  <h1>제목</h1>
+  <div><span>div1</span>
+  </div>
+  <div><span>div2</span>
+  </div>
+  <div><span>div3</span>
+  </div>
+
+  <script>
+//    document.createElement("div");
+//    $("<div id = 'id'>안녕</div>");  //1개가 들어가면 document -> 모든 태그가 document아래 있으니
+//    $("span","div");  //-> div 안에있는 span 태그를 찾는것 2개 있으면 오른쪽이 상위
+//    $("span", $('div'));  //jQuery객체 안에있는 div태그 안에있는 span태그를 찾음
+//    $("<span title=''>", {title : "this is a span tag"}); // 이런 식으로 객체가 들어갈 수도 있음
+//    $("<img>", {src:"a.gif", alt="이미지"});
+//    $(function(){});//함수가 들어가는 경우 - ready함수 = window.onload = function(){};
+//    //window.onload는 여러개 있어도 위에것을 덮어써서 맨 마지막에 선언한 window.onload 가 실행됨
+//    $(function(){});//를 사용하면 여러군대에서 정의를 하면 정의를 한 순서대로 한번씩 다 띄우기 때문에 편리 필요할 때마다 사용할 수 있으니...
+//    jQuery(function($){});//위와 같음 , function안에 $를 넣어 지역변수 호출가능 호출이 안될때 사용하지만 안적어줘도 된다는 학계의 정론
+//    if(div.jquery)//true가 나오면 jQuery. jQuery Property로 dom객체인지 jQuery객체인지 확인가능
+//    var a = div.jquery // -> 3.3.1 이라고 나옴
+  </script>
+
+</body>
+
+</html>

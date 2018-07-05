@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <script src = "../ajax_framework/Hiroki.js"></script>
+  <script>
+    function test() {
+    var Div =  document.getElementsByTagName("div")
+      //var request = HirokiJs.getHttpRequest();
+      //alert(request);
+      HirokiJs.getAjax("http://localhost/ajax/ajax_practice/data01.json", "res_place");
+    }
+  </script>
+  <body><!-- Framework를 만들 때 사용할 html -->
+<button onclick="test();">click it!</button>
+<div id = "res_place">no exist</div>
+  </body>
+</html>

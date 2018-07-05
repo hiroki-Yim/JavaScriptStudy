@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head><title>setInterval()로 텍스트 회전</title>
+  </head>
+  <body>
+<h3>자동회전 텍스트, if click stop</h3>
+<hr>
+<div><span id="div" style = "background-color:yellow">
+  auto spin text</span>
+</div>
+<script>
+  var div = document.getElementById("div");
+  var timerID = setInterval("doRotate()", 20);
+
+  div.onmouseover = function(e){
+    //clearInterval(timerID);
+  }
+
+  div.onclick = function(e){
+    clearInterval(timerID);
+  }
+
+  div.onmouseout = function(e){
+    timerID = setInterval("doRotate()", 20);
+  }
+
+  function doRotate(){
+    var str = div.innerHTML;
+    var firstChar = str.substr(0,1);
+    var remains = str.substr(1,str.length-1);
+    str = remains + firstChar;
+    div.innerHTML=str;}
+</script>
+  </body>
+</html>
